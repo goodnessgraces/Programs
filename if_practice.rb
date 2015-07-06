@@ -1,13 +1,13 @@
 todays_temp = gets.chomp.to_i
 def going_hiking(temp)
-if temp == 23
+if temp == 80
 	puts "It's #{temp}! It's freezing"
 
- elsif temp >= 50 
+ elsif temp != 23 && <  temp < 50 
 	puts "#{temp} degrees is perfect. I'm going hiking!"
 
 
-else temp >=33
+else temp <=33
 	puts "#{temp} degrees is Way too cold for hiking!"
 
 
