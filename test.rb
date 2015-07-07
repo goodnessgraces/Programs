@@ -1,1 +1,7 @@
-puts rand(4)+1
+#Literal constructor
+s = "hello"
+
+#name constructor
+d = Array.new([1,2])
+puts s
+puts d
