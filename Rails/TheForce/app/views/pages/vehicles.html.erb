@@ -1,0 +1,35 @@
+<table>
+	<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Model</th>
+			<th>Length</th>
+			<th>Crew</th>
+			<th>Max Atomsphering Speed</th>
+			<th>Passengers</th>
+			<th>Comsumables</th>
+			
+		
+		</tr>
+		<% @results.each do |vehicle| %>
+		<tr>
+			<td><%= vehicle["name"] %></td>
+			<td><%= vehicle["model"] %></td>
+			<td><%= vehicle["length"] %></td>
+			<td><%= vehicle["crew"] %></td>
+			<td><%= vehicle["max_atmosphering_speed"] %></td>
+			<td><%= vehicle["passengers"] %></td>
+			<td><%= vehicle["consumables"] %></td>
+			
+
+
+
+
+
+
+
+
+		</tr>
+		<% end %>
+	</tbody>
+</table>

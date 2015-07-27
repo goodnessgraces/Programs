@@ -1,0 +1,37 @@
+<table>
+	<tbody>
+		<tr>
+			<th>name</th>
+			<th>gravity</th>
+			<th>climate</th>
+			<th>terrain</th>
+			<th>population</th>
+			<th>surace water</th>
+			<th>rotation period</th>
+			<th>diameter</th>
+		
+		
+		</tr>
+		<% @results.each do |planet| %>
+		<tr>
+			<td><%= planet["name"] %></td>
+			<td><%= planet["gravity"] %></td>
+			<td><%= planet["climate"] %></td>
+			<td><%= planet["terrain"] %></td>
+			<td><%= planet["population"] %></td>
+			<td><%= planet["surface_water"] %></td>
+			<td><%= planet["rotation_period"] %></td>
+			<td><%= planet["diameter"] %></td>
+			
+
+
+
+
+
+
+
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+

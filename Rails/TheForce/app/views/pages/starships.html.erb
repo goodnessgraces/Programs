@@ -1,0 +1,42 @@
+<table>
+	<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Model</th>
+			<th>Starship Class</th>
+			<th>Crew</th>
+			<th>Max Atmosphering Speed</th>
+			<th>Pilots</th>
+			<th>Hyperdrive Rating</th>
+			
+			
+		
+		</tr>
+		<% @results.each do |starship| %>
+		
+		<tr>
+		<div class="container">
+			<td><%= starship["name"] %></td>
+			<td><%= starship["model"] %></td>
+			<td><%= starship["starship_class"] %></td>
+			<td><%= starship["crew"] %></td>
+			<td><%= starship["max_atmosphering_speed"] %></td>
+			<td><%= starship["pilots"].each do |url|%>
+			<%= JSON.parse(open(url).read)["name"] %>
+		
+			<% end %>
+			</td>
+			<td><%= starship["hyperdrive_rating"] %></td>
+			
+
+
+
+
+
+</div>
+
+		</tr>
+		
+		<% end %>
+	</tbody>
+</table>
