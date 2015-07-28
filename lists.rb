@@ -25,6 +25,7 @@ when "add"
 	puts "What would you like to add to the list?"
 	item = gets.chomp.downcase
 	puts "You added #{item} to the inventory"
+	 puts "Cart items: #{to_cart}"
 	puts list_obj.push(item)
 	
 when "remove"

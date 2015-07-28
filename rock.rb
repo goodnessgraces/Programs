@@ -1,10 +1,10 @@
-
 user_score= 0
 comp_score = 0
 
 while true
 
 
+# puts instead with no question
  puts "Please enter rock, paper, or scissors:"
 
 comp_choices = ["rock", "paper", "scissors"]
@@ -20,7 +20,6 @@ puts "its's a tie!"
 
 elsif (comp_choice == "paper" || user_answer == "paper") && (comp_choice == "scissors" || user_answer == "scissors")
 puts "scissors wins"
-
 if comp_choice == "scissors"
 puts "Computer Score: #{comp_score+=1}"
 puts "User Score:  #{user_score}"
@@ -32,7 +31,6 @@ end
 elsif 
 (comp_choice == "rock" || user_answer == "rock") && (comp_choice == "scissors" || user_answer == "scissors") 
 puts "rock wins"
-
 if comp_choice == "rock"
 puts "Computer Score: #{comp_score+=1}"
 puts "User Score:  #{user_score}"
@@ -43,7 +41,6 @@ end
 
 else 
 puts "paper wins"
-
 if comp_choice == "paper"
 puts "Computer Score: #{comp_score+=1}"
 puts "User Score:  #{user_score}"
