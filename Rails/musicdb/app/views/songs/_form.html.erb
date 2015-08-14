@@ -16,7 +16,7 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :artist_id, collection: Artist.all, label_method: artist.name %><br>
+    <%= f.label :artist_id %><br>
    <%= f.collection_select :artist_id, @artists, :id, :name %>
   </div>
   <div class="actions">

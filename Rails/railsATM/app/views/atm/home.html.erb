@@ -1,0 +1,38 @@
+<h1>Rails ATM</h1>
+<p>Enter amounts for deposit or withdrawl, or request your balance:</p>
+<table><thread> <tr> 
+<td>Deposits</td>
+<td>Withdrawls</td>
+<td>Check Balance</td>
+</tr>
+</thread>
+<tbody>
+	<tr>
+		<td>
+			<%=  form_tag  atm_home_path do %>
+			<%= label_tag(:w_amount, "withdrawl amount") %>
+			<%= hidden_field_tag(:atmaction, value = "withdrawl", options = {}) %>
+			<%=  text_field_tag(:w_amount)%>
+			<%= submit_tag("withdrawl") %>
+			<% end %>
+		</td>
+
+		<td>
+			<%=  form_tag atm_home_path do %>
+			<%= label_tag(:d_amount, "deposit amount") %>
+			<%= hidden_field_tag(:atmaction, value = "deposit", options = {}) %>
+			<%=  text_field_tag(:d_amount)%>
+			<%= submit_tag("Deposit") %>
+			<% end %>
+		</td>
+		<td>
+			<%=  form_tag atm_home_path do %>
+			<%= label_tag(:placeholder, "Click below to see your balance") %>
+			<%= hidden_field_tag(:atmaction, value = "balance", options = {}) %>
+			<%=  text_field_tag("placeholder", value = "", options = {:disabled => true})%>
+			<%= submit_tag("Check Balance") %>
+			<% end %>
+		</td>
+	</tr>
+	<td><%= RailsATM::Application.config.message %></td>
+</tbody></table>

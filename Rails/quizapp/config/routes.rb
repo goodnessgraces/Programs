@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'states/youwon'=>'states#youwon'
+  resources :states
   resources :cities
-  get 'youwon' => 'cities#youwon'
+  get 'cities/youwon' => 'cities#youwon'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

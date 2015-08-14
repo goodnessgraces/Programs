@@ -3,6 +3,7 @@ class CitiesController < ApplicationController
   include ApplicationHelper
 def youwon
   @cities= City.all
+  @citylist=[]
 end
   # GET /cities
   # GET /cities.json
@@ -32,7 +33,7 @@ end
     @city = City.new(city_params)
     @cities =City.all
 
-correct= check_answer(@city.name)
+correct= check_answer(@city.name,@citylist)
 is_dup =check_for_dup(@city.name, @cities)
 
 if correct == false
@@ -43,7 +44,7 @@ end
     respond_to do |format|
       if @cities.count <=2 && correct == true && is_dup == false && @city.save
      
-        format.html { redirect_to @city, notice: 'City was successfully created.' }
+        format.html { redirect_to new_city_path, notice: 'City was successfully created.' }
         format.json { render :show, status: :created, location: @city }
       elsif @cities.count == 3 && correct == true && is_dup== false && @city.save
         format.html { redirect_to youwon_path, notice: 'City was successfully created.' }

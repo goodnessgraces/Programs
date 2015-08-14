@@ -8,14 +8,18 @@
   </div>
   <div class="panel-body">
 
- by <%= blog_post.author %> on <%= blog_post.created_at.strftime("%A, %m/%d/%Y %I:%M:%S") %><br/>
+ by <%= link_to blog_post.user.name,user_posts_path(id: blog_post.user.id) %>  on  <%= blog_post.created_at.strftime("%A, %m/%d/%Y %I:%M:%S") %><br/>
   <p><%= blog_post.blog_entry[0..250] %>...[<%= link_to "Read More", blog_post %>]</p>
   
   </div>
   <div class="panel-footer">
-  <% link_to "Show", blog_post, class: "btn btn-primary" %>
+  <% if signed_in? %>
+  <% if current_user.id == blog_post.user.id %>
+  
   <%= link_to "Edit", edit_blog_post_path(blog_post), class: "btn btn-teal" %>
   <%= link_to "Destroy", blog_post, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger" %>
+  <% end %>
+  <% end %>
   </div>
   </div>
 </div>
@@ -23,4 +27,4 @@
 </div>
 <br>
 
-<%= link_to 'New Blog post', new_blog_post_path, class: "btn btn-success"%>
+<%link_to 'New Blog post', new_blog_post_path, class: "btn btn-success"%>
